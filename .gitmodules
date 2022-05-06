@@ -1,0 +1,6 @@
+[submodule "libs/websocketpp"]
+	path = libs/websocketpp
+	url = https://github.com/Alphikk/websocketpp.git
+[submodule "libs/protobuf"]
+	path = libs/protobuf
+	url = https://github.com/Alphikk/protobuf.git
