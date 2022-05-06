@@ -1,1 +1,2 @@
-libboost-dev
+libboost-dev=1.71.0.0ubuntu2
+libwebsocketpp-dev=0.8.1-7
