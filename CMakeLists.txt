@@ -13,13 +13,25 @@ find_package(Boost REQUIRED)
 
 add_executable(server src/server.cpp)
 
+add_executable(client src/client.cpp)
+
 target_include_directories(server PUBLIC
 "${CMAKE_SOURCE_DIR}/include"
 "${USR_INCLUDE_DIR}"
 "${Boost_INCLUDE_DIRS}")
 
+target_include_directories(client PUBLIC
+"${CMAKE_SOURCE_DIR}/include"
+"${USR_INCLUDE_DIR}"
+"${Boost_INCLUDE_DIRS}")
 
 target_link_libraries(server
+                      ${Boost_LIBRARIES}
+                      Threads::Threads
+                      OpenSSL::SSL
+                      OpenSSL::Crypto)
+
+target_link_libraries(client
                       ${Boost_LIBRARIES}
                       Threads::Threads
                       OpenSSL::SSL

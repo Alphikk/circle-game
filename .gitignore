@@ -1,2 +1,4 @@
 build
 .vscode
+key.pem
+cert.pem

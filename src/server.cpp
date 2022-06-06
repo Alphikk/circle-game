@@ -19,8 +19,8 @@ ns_Server::onTlsInit(websocketpp::connection_hdl handler)
     
   std::shared_ptr<SslContext> ctx = websocketpp::lib::make_shared<SslContext>(SslContext::sslv23);
 
-  ctx->use_certificate_chain_file("cert.pem");
-  ctx->use_private_key_file("key.pem", SslContext::pem);
+  ctx->use_certificate_chain_file("../cert.pem");
+  ctx->use_private_key_file("../key.pem", SslContext::pem);
   return ctx;
 }
 
@@ -73,6 +73,7 @@ int main() {
 
     server.listen(30001);
     server.start_accept();
+    std::cout << "***START SERVER***" << std::endl;
     server.run();
 
     return 0;
